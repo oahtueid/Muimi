@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6a998a0cfe0174dae417adc9d8baab, type: 3}
+  m_Name: M0.1
+  m_EditorClassIdentifier: Assembly-CSharp::MemoryData
+  memoryName: '#0.1'
+  description: she gained high prize in English contest, along with her friends
+  memoryImage: {fileID: 0}
+  memoryType: 1

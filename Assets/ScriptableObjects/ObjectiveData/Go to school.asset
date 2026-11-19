@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f7f7da4662b9249b745be02a041ffb, type: 3}
+  m_Name: Go to school
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectiveData
+  id: 2
+  description: Go to club
+  target: {fileID: 11400000, guid: 1d6e8c733d63d114ea73b5242938515a, type: 2}
+  objectiveType: 0
+  hideObjectAfterCompleted: 0
+  OnCompleted:
+  - {fileID: 11400000, guid: f5fe82c81d739f14ab8e67c2327a2d67, type: 2}
+  - {fileID: 11400000, guid: 31da0cf299a06fe4a8882289b3281391, type: 2}
