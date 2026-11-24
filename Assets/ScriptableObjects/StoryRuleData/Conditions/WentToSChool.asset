@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872aa09822cc4af4290087ce78010f19, type: 3}
-  m_Name: FlagCondition
+  m_Name: WentToSChool
   m_EditorClassIdentifier: Assembly-CSharp::FlagCondition
   flag: {fileID: 11400000, guid: 8538192ef841f8a4ba93d36dc24e2e68, type: 2}
   invert: 0

@@ -2,10 +2,11 @@ VAR ann_trust=0
 EXTERNAL AddObjective(id)
 EXTERNAL CompleteObjective(id)
 EXTERNAL StartMinigame(name)
+EXTERNAL PlayCutscene(name)
 \ #effect:flashback
-"Are you happy?" #speaker:???
+"Are you happy?" #speaker:??? #image:hidden_face
 "..." #speaker:me
-"What if you can start over?" #speaker:??? #image:hidden_face
+"What if you can start over?" #speaker:???
 \ #effect:wake_up
 -> Day1
 
@@ -21,24 +22,25 @@ Look around, strange feeling bottle up in me
 "MOKUSA, GET UP! Ann-chan comes" #speaker:??? #effect:loud
 !?
 #sound:bang #image:none
+~PlayCutscene("AnnComing")
 ~ AddObjective(1)
 "Morningg! Get all ready?" #speaker:???
 
 "... hello"
 
-Vẫn chưa hết mệt mỏi, tôi khẽ chào lại. Nhưng mà cô ấy là ai vậy chứ. Từ những gì nghe được, thì có vẻ đây là bạn học của mình tới đón mình đi học, và giọng lớn hồi nãy có thể là mẹ mình? Nhưng tại sao mình lại không biết giọng mẹ và bạn mình chứ. Mình là.. ai? #speaker:none #effect:flash
-"Urgh" #speaker:Mokusa #potrait:Mokusa/pain
+Still feeling exhausted, I offered a faint greeting in return. But… who is she, exactly? From what I’ve gathered, it seems like a classmate has come to pick me up for school—and that loud voice from earlier… could that have been my mother? But why don’t I recognize the voices of my own mother or my friend? Who… am I? #speaker:none #effect:flash
+"Urgh." #speaker:Mokusa #potrait:Mokusa/pain
 "..." #speaker:Ann #potrait:Ann/normal
-"Qua cậu quên uống thuốc à.."
-"Thuốc?" Thuốc gì?
-"Hửm? Thì là thuốc đau đầu đó, mấy nay cậu hay đau đầu mất ngủ nên đi hiệu thuốc mua thuốc còn gì."
-"Vậy… à. Chắc là vậy thật…"
-"Cậu ổn không, vẫn đi học được chứ?" #speaker:Ann #potrait:Ann/worried
-* [Nói cho cô ấy tình trạng của mình]
-    -> tellAnnCondition
-* [Trấn an rằng mình không sao, vẫn đi học được]
-    -> hideAnnAndGoToSchool
-* [Nói rằng cảm thấy không ổn nên xin nghỉ]
+"Did you forget to take your medicine again?"
+"Medicine?" What medicine?
+"Hmm? You know, the medicine for your headaches. You’ve been suffering from headaches and insomnia lately, so you went to the pharmacy to get some, remember?"
+"Oh… I see. I suppose that’s right…"
+"Are you alright? Are you still up for going to school?" #speaker:Ann #potrait:Ann/worried
+* [Tell her about my current state]
+-> tellAnnCondition
+* [Reassure her that I’m fine and can still go to school]
+-> hideAnnAndGoToSchool
+* [Say that I’m not feeling well and decide to stay home]
     -> hideAnnAndNotGoToSchool
 
 = School
@@ -52,97 +54,96 @@ Vẫn chưa hết mệt mỏi, tôi khẽ chào lại. Nhưng mà cô ấy là a
 // "Yeah, that's really just you" #speaker:???
 // "*Ring ring" #sound:bell
 // "Right. As announce last week, today we'll have a test, close all your books please"
-Ngôi trường mới, chưa có quá nhiều cây nên sân lúc nào cũng nắng đặc biệt vào trưa chiều. Có 3 tòa nhà, nhưng chỉ có 1 tòa là các lớp học, chỉ có 2 tầng nên các khối chia nhau học sáng chiều… Ngôi trường này, mình biết về nó, chắc chắn mình đã có học ở đây. Tôi theo Ann vào lớp, đó là lớp đầu dãy ở tầng 1. Tôi với Ann ngồi cạnh nhau ở bàn thứ 4 dãy thứ 2 tính từ cửa vào. Ngạc nhiên là tôi có thể tới đúng chỗ ngồi của mình mà không phải hỏi ai, có lẽ đây gọi là trí nhớ cơ bắp.
-Tụi tôi tới được một lúc thì tiếng chuông vào lớp kêu lên. Cậu trai ngồi phía trên quay xuống bàn
-"Hello. Ôn bài chưa đó?" Cậu trai hỏi, trông có vẻ thoải mái. Mình biết cậu ta. Cậu ta là….
-"Morning, Kento. Cũng ôn một ít. Mokusa còn k nhớ nay kiểm tra nữa cơ KD"
-"Eh, ổn không vậy?" Biểu cảm của cậu ta y hệt như Ann, ngạc nhiên xen lẫn lo lắng
-"Ổn mà, tiếng Anh thì không lo lắm"
-"Uhm, đúng vậy thật, tiếng Anh thì chắc không làm khó cậu được đâu"
-Tôi gật đầu. Tôi khá tự tin về tiếng Anh của mình, nếu chỉ là bài kiểm tra trên lớp thì không vấn đề gì.
+The new school didn’t have many trees yet, so the courtyard was always bathed in sunlight—especially in the afternoon. There were three buildings, but only one contained classrooms; since it was only two stories high, the different grade levels had to split the day, attending in either the morning or afternoon shifts. I recognized this place—I had definitely studied here before. I followed Ann into the classroom—the first one in the row on the first floor. Ann and I sat side-by-side at the fourth desk in the second row from the door. To my surprise, I was able to find my seat without having to ask anyone; perhaps this is what they call "muscle memory."
+Not long after we arrived, the bell rang for class to begin. The boy sitting in front of us turned around.
+"Hello. Did you study?" he asked, looking quite relaxed. I knew him. He was…
+"Morning, Kento. I studied a bit. Mokusa didn’t even remember there was a test today!"
+"Eh? Are you going to be okay?" His expression mirrored Ann’s—a mix of surprise and concern.
+"I’ll be fine. I’m not too worried about English."
+"Yeah, that’s true—English probably won’t give you any trouble."
+I nodded. I was quite confident in my English; a standard classroom test wouldn’t be an issue at all.
 …
-Cậu ta đúng là Kento, mình đã từng học với cậu ta. Và những bạn trong lớp trông cũng cực kỳ quen. Có lẽ ký ức của mình không hoàn toàn mất đi, vẫn có thể lấy lại được.
-Bing boongg
-Tiếng chuông kết thúc tiết chủ nhiệm vang lên. Sắp tới giờ kiểm tra rồi. Sau khi giấy được phát xong xuôi, giáo viên giải thích kỳ thi, tiếng chuông vang lên lần nữa, lần này là bắt đầu tính giờ làm bài.
+He really was Kento—I had definitely been in class with him before. And the other students looked incredibly familiar, too. Perhaps my memories weren’t entirely gone; maybe they could still be recovered.
+*Bing-bong.*
+The bell rang, signaling the end of the homeroom period. It was almost time for the test. Once the papers had been handed out and the teacher had finished explaining the exam, the bell rang once more—this time, marking the start of the test.
 -> END
 = AfterExam1
-Kết thúc kiểm tra, các bài nộp xong xuôi, cả lớp chào cô, mọi người bắt đầu so đáp án với nhau
-"ABDC"
-"Đúng"
-"CADB"
-"Đúng"
-"Khoan, câu 7 A chứ!"
-"Gì, tụi mày ra nhiêu"
-"D"
-"D"
-"D"
-"Nooo"
-"Chúc may mắn lần sau"
-1 chiến sĩ hy sinh. Về phần mình, tôi cũng dò đáp án với Kento và Ann.
+As the test concluded and all papers were submitted, the class said goodbye to the teacher, and everyone began comparing their answers.
+"ABDC."
+"Correct."
+"CADB."
+"Correct."
+"Wait, isn't question 7 'A'?"
+"What? What did you guys get?"
+"D."
+"D."
+"D."
+"Nooo!"
+"Better luck next time."
+One soldier down. As for me, I started checking my answers with Kento and Ann.
 
 ->END
 -> END
 
 === tellAnnCondition === 
 ~ann_trust = ann_trust + 5
-Tôi giải thích tình trạng của mình với cô ấy...#speaker:narrator
-"Urgh, mình không biết nói gì hơn. Nhà cậu có biết chuyện này không. Mà, theo phản ứng của cô thì chắc là không rồi"
-"Uhm, mình mới nhận ra vừa nãy thôi"
-"Chắc là trước mắt mình cứ đi học đã, trong lúc đi tớ sẽ kể lại cho cậu, xem cậu có nhớ lại được không"
-"Uhm"
-Tôi thay quần áo, chải chuốt và chuẩn bị đi học. #speaker:narrator
-"Tuần trước cậu nói là mình đau đầu, k ngủ được nên mình cùng đi với cậu tới hiệu thuốc để bớt đau hơn. Được vài ngày thì nhìn cậu ổn hơn nên mình cũng yên tâm phần nào, ai ngờ giờ lại thành như này, không biết là do không uống thuốc, hay thuốc có vấn đề nữa… "
-"Tại sao mình đau đầu, cậu có biết không?"
-"Cậu có nói rằng mình stress, nhưng không nói rõ lý do. Lúc đó trông cậu chần chừ lắm, nên mình mới nói là khi nào sẵn sàng thì kể cho mình nghe cũng được."
-"À mà chắc cậu chưa nhớ ra tớ nhỉ. Tớ là Ann, tụi mình là bạn thân á"
-"Thật hả"
-"Uhm!"
-"Xin lỗi, tớ chưa nhớ ra được gì hết"
-"Không sao, không sao. Biết đâu trải qua 1 ngày trên trường có khi lại giúp cậu nhớ gì đó thì sao"
-Nhờ trải lòng với cậu ấy, tôi bình tĩnh lại được phần nào. Thật tốt khi quyết định nói.
-"Ah". Như vừa nghĩ ra gì đó, Ann liền quay sang tôi, ngập ngừng.
-"Quên mất, tí nữa kiểm tra tiếng Anh cuối kỳ á …"
+I explained my situation to her... #speaker:narrator
+"Urgh, I don’t even know what to say. Does your family know about this? Well, judging by your reaction, I guess not."
+"Yeah, I only just realized it myself a little while ago."
+"For now, let’s just head to school. I’ll fill you in on the way—maybe it’ll help jog your memory."
+"Right."
+I got dressed, tidied myself up, and prepared to head to school. #speaker:narrator
+"Last week, you mentioned having a headache and trouble sleeping, so I went with you to the pharmacy to get something for the pain. You seemed better after a few days, so I felt a bit relieved—but now this happens! I wonder if you stopped taking the medicine, or if there was something wrong with it..."
+"Do you know why I had those headaches?"
+"You said you were stressed, but you didn't go into detail. You seemed really hesitant, so I told you you could tell me whenever you felt ready."
+"Oh, and you probably don't remember me yet, do you? I’m Ann—we’re best friends!"
+"Really?"
+"Yeah!"
+"I’m sorry, I still can’t recall anything at all."
+"It’s okay, don’t worry about it! Maybe spending a day at school will help bring some memories back."
+Opening up to her helped me calm down a bit. I’m glad I decided to tell her.
+"Ah." Suddenly, as if something just occurred to her, Ann turned toward me, looking a bit hesitant.
+"Oh, wait—we have our final English exam coming up..."
 "EH!?"
 ~ AddObjective(2)
 -> END
 
 === hideAnnAndGoToSchool ===
-"Ổn mà, cậu đợi chút mình chuẩn bị nha"
-Tôi thay quần áo, chải chuốt và chuẩn bị đi học….
-[Kiểm tra 2]
-"À mà, cậu ôn bài chưa?"
-"Eh, bài gì cơ?"
-"Hả" Ann tròn mắt, há hốc mồm
-"Nay kiểm tra cuối kỳ tiếng Anh á, cậu không nhớ hả?"
-"EH?!" Lần này đến lượt tôi không khỏi kiềm được mà há mồm
-"Thật luôn á hả?"
-Hai đứa nhìn nhau
+"Sure, just give me a moment to get ready."
+I changed my clothes, tidied myself up, and got ready for school… #speaker:narrator
+"By the way, have you studied for the test?"
+"Huh? What test?"
+"What?" Ann’s eyes went wide, her mouth falling open.
+"The final English exam today—don't tell me you forgot?"
+"EH?!" This time, I couldn't help but gape in shock.
+"Are you serious?"
+We stared at each other.
 …
-"Sáng h trông cậu cứ kỳ lạ sao ấy, cậu chắc là mình ổn chứ"
-"Ổn mà, mình nghĩ là do mình chưa tỉnh ngủ hẳn thôi"
-"Hmm" Ann nheo mắt nhìn chằm chằm tôi. Cậu ấy nghi ngờ cũng phải thôi, sao lại nhằm lúc này có kiểm tra cơ chứ ;-;
-"Mà, như tớ đã nói lúc trước, tớ sẽ đợi, đến khi nào cậu thấy thoải mái thì hãy nói với tớ"
-"Lúc trước?". Tôi lẩm bẩm
+"You’ve been acting a bit strange all morning. Are you sure you’re okay?"
+"I’m fine—I think I’m just not fully awake yet."
+"Hmm." Ann narrowed her eyes, staring straight at me. It’s no wonder she’s suspicious—why on earth did the test have to fall on a day like this? ;-;
+"Anyway, like I said before, I’ll wait. Just tell me whenever you feel comfortable enough to talk."
+"Before?" I muttered.
 "Hmm?"
-"À, không có gì. Cảm ơn cậu nhiều"
-"Có gì đâu, tụi mình bạn thân mà."
-"Mà đề phòng quý cô đây chưa tỉnh ngủ hẳn thì kiểm tra vào tiết 1 á nha"
+"Oh, never mind. Thanks a lot."
+"Don't mention it! We’re best friends, after all."
+"And just in case you’re still not quite awake—the test is during the first period, by the way."
 "..."
 ~ AddObjective(2)
 -> END
 
 === hideAnnAndNotGoToSchool ===
-"Eh, thật à. Toang rồi, nay còn có kiểm tra nữa chứ" #speaker:Ann #potrait:Ann/confused
-"Kiểm tra?!"
-"Ừ, ủa cậu không nhớ hả, nay kiểm tra cuối kỳ tiếng Anh đó"
-"CUỐI KỲ!?"
-"Uhm. Xin nghỉ cũng đc, nhma phải báo lại với giáo viên rồi còn đợi chuẩn bị đề khác để làm nữa á."
-…Đúng lúc quá vậy trời. Chắc ráng đi vậy, nếu không thì phát sinh thêm nhiều thứ phiền phức. Với lại, nếu là tiếng Anh thì tôi nghĩ mình xoay sở được.
-"...Đành vậy, chắc tớ vẫn sẽ đi"
-"Ổn không đó"
-"Ổn mà"
-"Mà, kiểm tra vào tiết 1, ráng kiểm tra xong rồi về nghỉ cũng được"
-"Uhm"
+"Wait, seriously? Oh man, and there’s an exam today, too!" #speaker:Ann #potrait:Ann/confused
+"An exam?!"
+"Yeah—don't tell me you forgot? It’s the final English exam today."
+"A FINAL EXAM!?"
+"Mhm. You could ask for an excused absence, but you’d have to notify the teacher and wait for them to prepare a different version of the test for you to take later."
+…Of course, the timing just had to be perfect. I guess I’ll just have to go; otherwise, it’ll just lead to a whole lot of extra hassle. Besides, it’s English—I think I can manage.
+"...Alright, I guess I’ll go after all."
+"Are you sure you’re okay?"
+"Yeah, I’m fine."
+"Well, the exam is during the first period—you could just finish that and then head home to rest."
+"Mhm."
 
 -> END
 

@@ -7,7 +7,7 @@ using UnityEngine;
     menuName = "Scriptable Objects/CharacterData",
     order = 1
 )]
-public class CharacterData : ScriptableObject
+public class CharacterData : CharacterTarget
 {
     public GameObject characterPrefab;
     public Sprite image;

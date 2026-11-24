@@ -95,6 +95,8 @@ public class MinigameUIController : MonoBehaviour
 
     void DisplayResult(GameResult result)
     {
+        if(currentScoreText != null) currentScoreText.gameObject.SetActive(false);
+        if(timeLeftText != null) timeLeftText.gameObject.SetActive(false);
         if (resultPanel == null)
             return;
         resultPanel.SetActive(true);

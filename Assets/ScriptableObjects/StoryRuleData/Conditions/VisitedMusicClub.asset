@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: VisitedMusicClub
   m_EditorClassIdentifier: Assembly-CSharp::FlagCondition
   flag: {fileID: 11400000, guid: 5e1b0669e4d15aa40b5418b5c86eb974, type: 2}
-  invert: 1
+  invert: 0

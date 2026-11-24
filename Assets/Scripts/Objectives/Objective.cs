@@ -17,8 +17,6 @@ public class Objective : MonoBehaviour
 
     public void Complete()
     {
-        Debug.Log("complete obj");
-        description.text = "";
         description.color = Color.yellow;
         StartCoroutine(FadeOut());
     }
@@ -30,9 +28,9 @@ public class Objective : MonoBehaviour
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            description.alpha = Mathf.Lerp(description.alpha, 0, elapsed);
+            description.alpha = Mathf.Lerp(description.alpha, 0, elapsed / duration);
             yield return null;
         }
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

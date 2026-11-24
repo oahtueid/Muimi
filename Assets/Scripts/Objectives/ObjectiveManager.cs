@@ -65,7 +65,6 @@ public class ObjectiveManager : PersistentManager<ObjectiveManager>
         {
             Objective completed = objectiveUIs.Find((obj) => obj.Data.id == id);
             completed.Complete();
-            Destroy(completed.gameObject);
             currentObjectives[id].isCompleted = true;
             currentObjectives[id].data.Complete();
             currentObjectives.Remove(id);

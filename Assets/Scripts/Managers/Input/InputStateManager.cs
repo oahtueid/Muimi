@@ -33,7 +33,7 @@ public class InputStateManager : PersistentManager<InputStateManager>
 
     public void Disable()
     {
-        stateHistory.Peek()?.Exit();
+        CurrentState?.Exit();
     }
 
     public void Enable()

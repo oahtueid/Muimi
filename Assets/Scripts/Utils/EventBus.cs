@@ -10,6 +10,7 @@ public record ItemInteractedEvent(string itemId) : IGameEvent;
 public record ObjectiveCompletedEvent(string objectiveId) : IGameEvent;
 public record MinigameFinishedEvent(string minigameId) : IGameEvent;
 public record DialogueFinishedEvent(string dialogueName) : IGameEvent; // TODO: find way to define or get current story name
+public record CharacterInteractedEvent(string characterId) : IGameEvent;
 public static class EventBus
 {
     public static readonly Dictionary<Type, Delegate> listeners = new();

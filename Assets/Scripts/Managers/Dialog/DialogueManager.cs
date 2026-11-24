@@ -151,7 +151,7 @@ public class DialogueManager : PersistentManager<DialogueManager>
 
     public void GoToPath(string pathName, string fileName = null, Action onFinish = null)
     {
-        if (fileName != null)
+        if (fileName != null && fileName != "")
         {
             LoadFile(fileName);
         }
@@ -188,6 +188,13 @@ public class DialogueManager : PersistentManager<DialogueManager>
                 {
                     SceneManager.LoadScene("Rhythm");
                 }
+            }
+        );
+        currentStory.BindExternalFunction(
+            "PlayCutscene",
+            (string name) =>
+            {
+                CutsceneManager.Instance.PlayCutscene(name);
             }
         );
     }

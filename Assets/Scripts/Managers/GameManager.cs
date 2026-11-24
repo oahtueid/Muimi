@@ -32,12 +32,15 @@ public class GameManager : PersistentManager<GameManager>
         EventBus.Subcribe<LocationEnteredEvent>(OnLocationEntered);
         EventBus.Subcribe<ItemInteractedEvent>(OnItemInteracted);
         EventBus.Subcribe<MinigameFinishedEvent>(OnMinigameFinished);
+        EventBus.Subcribe<CharacterInteractedEvent>(OnCharacterInteracted);
     }
 
     void OnDisable()
     {
         EventBus.UnSubcribe<LocationEnteredEvent>(OnLocationEntered);
+        EventBus.UnSubcribe<ItemInteractedEvent>(OnItemInteracted);
         EventBus.UnSubcribe<MinigameFinishedEvent>(OnMinigameFinished);
+        EventBus.UnSubcribe<CharacterInteractedEvent>(OnCharacterInteracted);
     }
 
     void Start()
@@ -127,6 +130,18 @@ public class GameManager : PersistentManager<GameManager>
         if (!storyRuleDict.ContainsKey(e.minigameId))
             return;
         foreach (var rule in storyRuleDict[e.minigameId])
+        {
+            if (rule.IsSatisfied())
+            {
+                rule.Execute();
+            }
+        }
+    }
+        void OnCharacterInteracted(CharacterInteractedEvent e)
+    {
+        if (!storyRuleDict.ContainsKey(e.characterId))
+            return;
+        foreach (var rule in storyRuleDict[e.characterId])
         {
             if (rule.IsSatisfied())
             {

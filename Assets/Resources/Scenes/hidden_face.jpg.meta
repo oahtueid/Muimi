@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d4df42470cb448e4cbb5e83f48da1807
+guid: d70632164e90d8b4a9eb26f5b45f05f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2074308909726440732
-    second: hidden_face_0
+      213: -5012616029373648749
+    second: Dha6egXW0AA92T1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hidden_face_0
+      name: Dha6egXW0AA92T1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 2000
-        height: 1440
+        y: 683
+        width: 848
+        height: 350
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 350, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c1d1ca696fc69cc10800000000000000
-      internalID: 2074308909726440732
+      spriteID: 39031cd774c9f6ab0800000000000000
+      internalID: -5012616029373648749
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 52410f1dc123a514b9846930a65d1d7e
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hidden_face_0: 2074308909726440732
+      Dha6egXW0AA92T1_0: -5012616029373648749
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
